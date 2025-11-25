@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BuiltByBudge – Jack Budge</title>
+  <title>Built By Budge – Jack Budge</title>
 
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,16 +13,22 @@
   <!-- Styles -->
   <link rel="stylesheet" href="css/styles.css" />
 
-  <meta name="description" content="BuiltByBudge – Experiments, apps and ideas by Jack Budge: NOVA, IngreedyIt, Drivia, GIRL, Experiment 42 and more." />
+  <meta name="description" content="Built By Budge – Monochrome portfolio of apps, experiments and music by Jack Budge: NOVA, IngreedyIt, Drivia, GIRL, Experiment 42, VibraVolt and more." />
 </head>
 <body>
   <div class="bg-gradient"></div>
 
   <header class="site-header">
     <div class="brand">
-      <div class="brand-logo">BB</div>
+      <!-- Logo image -->
+      <!-- Put your preferred logo file at: /images/builtbybudge-logo-mark.png -->
+      <img
+        src="images/builtbybudge-logo-mark.png"
+        alt="Built By Budge logo"
+        class="brand-logo-img"
+      />
       <div class="brand-text">
-        <span class="brand-title">BuiltByBudge</span>
+        <span class="brand-title">Built By Budge</span>
         <span class="brand-tagline">Ideas, experiments & experiences by Jack Budge</span>
       </div>
     </div>
@@ -38,11 +44,12 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-content">
-        <p class="hero-kicker">Hi, I’m Jack Budge 👋</p>
-        <h1>Design-driven apps, games & experiments<br/>built by Budge.</h1>
+        <p class="hero-kicker">JACK BUDGE · BUILT BY BUDGE</p>
+        <h1>Monochrome engineering.<br />Bold ideas, built and shipped.</h1>
         <p class="hero-subtitle">
-          From health and habit systems to racing games and music projects,
-          this is the home of everything <strong>BuiltByBudge</strong>.
+          From health systems and energy inventions to games and dance records,
+          this is the black-and-silver archive of everything
+          <strong>Built By Budge</strong>.
         </p>
 
         <div class="hero-actions">
@@ -56,105 +63,107 @@
     <section id="projects" class="section">
       <div class="section-header">
         <h2>Projects</h2>
-        <p>A snapshot of what I’ve been building lately.</p>
+        <p>A snapshot of what I’ve been building.</p>
       </div>
 
       <div class="project-grid">
+        <!-- Experiment 42 -->
+        <article class="project-card">
+          <div class="project-pill">Music · In progress</div>
+          <h3>Experiment 42</h3>
+          <p>
+            A coming-of-age musical project of 42 tracks across genres,
+            designed to reach and move 1,000,000 people.
+          </p>
+          <ul class="project-tags">
+            <li>Music</li><li>Story</li><li>Production</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" target="_blank" class="project-link disabled">Releasing soon</a>
+          </div>
+        </article>
+
         <!-- NOVA -->
         <article class="project-card">
-          <div class="project-pill">Health • In development</div>
+          <div class="project-pill">Health · Flagship</div>
           <h3>NOVA</h3>
           <p>
-            A holistic health operating system that connects movement, food,
-            sleep, mind and medical data into one intelligent, beautifully designed app.
+            The future’s health operating system. A single, intelligent layer
+            that connects movement, food, sleep, mind and medical data into one
+            coherent experience.
           </p>
           <ul class="project-tags">
             <li>Flutter</li><li>AI</li><li>Health</li>
           </ul>
           <div class="project-links">
-            <!-- TODO: replace # with the real link when ready -->
             <a href="#" target="_blank" class="project-link disabled">Coming soon</a>
+          </div>
+        </article>
+
+        <!-- VibraVolt -->
+        <article class="project-card">
+          <div class="project-pill">Energy · Awarded</div>
+          <h3>VibraVolt</h3>
+          <p>
+            A triboelectric nanogenerator concept that captures energy from
+            vibration. Recognised with a United Nations award for innovation.
+          </p>
+          <ul class="project-tags">
+            <li>Hardware</li><li>Energy</li><li>UN Award</li>
+          </ul>
+          <div class="project-links">
+            <a href="#" target="_blank" class="project-link disabled">Technical write-up soon</a>
           </div>
         </article>
 
         <!-- IngreedyIt -->
         <article class="project-card">
-          <div class="project-pill">Health • Live</div>
+          <div class="project-pill">Health · Live</div>
           <h3>IngreedyIt</h3>
           <p>
-            A smart ingredient scanner that explains what’s actually in your food,
-            ranks products, and helps people make cleaner choices without the confusion.
+            A different lens on food and products. Ingredient scanning that
+            explains what’s inside and why it matters, reaching the top 10 in
+            Apple’s Health &amp; Fitness charts.
           </p>
           <ul class="project-tags">
             <li>Flutter</li><li>Nutrition</li><li>Mobile</li>
           </ul>
           <div class="project-links">
-            <!-- TODO: add App Store / Play Store URLs -->
-            <a href="#" target="_blank" class="project-link">View on Google Play</a>
+            <a href="#" target="_blank" class="project-link">View on App Store</a>
           </div>
         </article>
 
-        <!-- Drivia / The Racing Game -->
+        <!-- GIRL -->
         <article class="project-card">
-          <div class="project-pill">Game • Multiplayer</div>
-          <h3>Drivia</h3>
-          <p>
-            A fast, chaotic multiplayer drinking & trivia racing game.
-            Real-time WebSocket server, custom tracks, drifting, and surprise challenges mid-race.
-          </p>
-          <ul class="project-tags">
-            <li>Flutter</li><li>WebSocket</li><li>Game</li>
-          </ul>
-          <div class="project-links">
-            <!-- TODO: link to TestFlight / store / repo -->
-            <a href="https://github.com/budge42/race_me" target="_blank" class="project-link">View the code</a>
-          </div>
-        </article>
-
-        <!-- Experiment 42 -->
-        <article class="project-card">
-          <div class="project-pill">Experiment</div>
-          <h3>Experiment 42</h3>
-          <p>
-            A playground for weird ideas, prototypes and one-off builds.
-            Where I test new interfaces, physics, AI agents and anything else that feels fun.
-          </p>
-          <ul class="project-tags">
-            <li>Prototype</li><li>AI</li><li>Design</li>
-          </ul>
-          <div class="project-links">
-            <!-- TODO: link to a Notion page, GitHub repo, or demo when you want -->
-            <a href="#" target="_blank" class="project-link disabled">More coming soon</a>
-          </div>
-        </article>
-
-        <!-- GIRL (music) -->
-        <article class="project-card">
-          <div class="project-pill">Music • EP</div>
+          <div class="project-pill">Music · Released</div>
           <h3>GIRL</h3>
           <p>
-            A music project exploring emotion, story and sound design.
-            Written, produced and performed by me as another way to build worlds.
+            A dance EP built around emotion, groove and story.
+            Landed on major editorial playlists and set the tone for future
+            Built By Budge sound.
           </p>
           <ul class="project-tags">
-            <li>Music</li><li>Production</li><li>Story</li>
+            <li>Dance</li><li>EP</li><li>Playlists</li>
           </ul>
           <div class="project-links">
-            <!-- TODO: add Spotify / Apple Music link -->
             <a href="#" target="_blank" class="project-link">Listen on Spotify</a>
           </div>
         </article>
 
-        <!-- Add-more card -->
-        <article class="project-card project-card--ghost">
-          <h3>More coming soon</h3>
+        <!-- Drivia -->
+        <article class="project-card">
+          <div class="project-pill">Game · Multiplayer</div>
+          <h3>Drivia</h3>
           <p>
-            I’m constantly experimenting – new tools, features and ideas will show up here
-            as they’re released.
+            An online multiplayer racing and trivia game. Real-time cars,
+            chaotic questions, and the occasional drink-based dare.
           </p>
           <ul class="project-tags">
-            <li>Stay tuned</li>
+            <li>Flutter</li><li>Game</li><li>Multiplayer</li>
           </ul>
+          <div class="project-links">
+            <a href="https://github.com/budge42/race_me" target="_blank" class="project-link">View the code</a>
+          </div>
         </article>
       </div>
     </section>
@@ -163,28 +172,28 @@
     <section id="about" class="section">
       <div class="section-header">
         <h2>About Jack</h2>
-        <p>A quick snapshot of who’s behind all this.</p>
+        <p>The builder behind Built By Budge.</p>
       </div>
 
       <div class="about-grid">
         <div>
           <p>
-            I’m Jack Budge – an engineer, designer and founder obsessed with
-            building tools that actually help people: live healthier, think deeper,
-            and have more fun.
+            I’m Jack Budge, an engineer, designer and founder focused on
+            building tools and experiences that actually help people:
+            healthier bodies, clearer minds and more playful lives.
           </p>
           <p>
-            I design and code almost everything myself, from system architecture
-            to UI animations. I’m especially interested in health, behaviour,
-            habit-design, and making interfaces that feel like art.
+            I design and code my own products end-to-end, from architecture and
+            physics to typography and animations. Built By Budge is the banner
+            for all of those experiments.
           </p>
         </div>
         <div>
           <ul class="about-list">
-            <li>🧠 Mechanical engineer, builder & tinkerer</li>
-            <li>📱 Shipping Flutter & native iOS apps</li>
-            <li>🎵 Artist & producer behind projects like <em>GIRL</em></li>
-            <li>🌍 Based in New Zealand, building for the world</li>
+            <li>Mechanical engineering background with a bias toward shipping.</li>
+            <li>Building production-grade apps in Flutter and native iOS.</li>
+            <li>Releasing records and projects like GIRL and Experiment 42.</li>
+            <li>Based in New Zealand, building for a global audience.</li>
           </ul>
         </div>
       </div>
@@ -194,17 +203,17 @@
     <section id="contact" class="section">
       <div class="section-header">
         <h2>Contact</h2>
-        <p>Want to collaborate, invest, or just say hi?</p>
+        <p>For collaboration, investment or interesting problems.</p>
       </div>
 
       <div class="contact-card">
         <p>
-          The easiest way to reach me is by email. I read everything.
+          Email is the most direct way to reach me. I read everything and reply
+          when I can add real value.
         </p>
         <a href="mailto:jack@builtbybudge.com" class="btn-primary">Email Jack</a>
 
         <div class="contact-links">
-          <!-- TODO: Put your real links here -->
           <a href="https://github.com/budge42" target="_blank">GitHub</a>
           <a href="#" target="_blank">Instagram</a>
           <a href="#" target="_blank">LinkedIn</a>
@@ -214,11 +223,10 @@
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> BuiltByBudge · Crafted by Jack Budge</p>
+    <p>© <span id="year"></span> Built By Budge · Designed and developed by Jack Budge</p>
   </footer>
 
   <script>
-    // Keep the footer year correct
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
