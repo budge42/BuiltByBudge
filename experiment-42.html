@@ -11,6 +11,82 @@
 
   <link rel="stylesheet" href="css/styles.css" />
   <meta name="description" content="Experiment 42 – 42-song coming-of-age project by Jack Budge." />
+
+  <!-- Page-specific collage styling -->
+  <style>
+    .exp42-hero-extra {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .exp42-section {
+      padding-top: 10px;
+    }
+
+    .exp42-collage {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+      gap: 10px;
+      max-width: 1040px;
+    }
+
+    .exp42-tile {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #050505;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+      transform-origin: center;
+      transition:
+        transform 0.25s ease-out,
+        box-shadow 0.25s ease-out,
+        filter 0.25s ease-out;
+    }
+
+    .exp42-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Slightly staggered angles for a dynamic feel */
+    .exp42-tilt-l {
+      transform: rotate(-3deg);
+    }
+    .exp42-tilt-r {
+      transform: rotate(3deg);
+    }
+    .exp42-tilt-s {
+      transform: rotate(0deg);
+    }
+
+    .exp42-tile:hover {
+      transform: translateY(-4px) scale(1.04) rotate(0deg);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 1);
+      filter: brightness(1.05);
+    }
+
+    .exp42-meta-row {
+      margin-top: 18px;
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .exp42-meta-row span {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      .exp42-collage {
+        gap: 8px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="bg-gradient"></div>
@@ -36,27 +112,90 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-content">
-        <p class="hero-kicker">Music</p>
+        <p class="hero-kicker">Music · Experiment</p>
         <h1>Experiment 42</h1>
         <p class="hero-subtitle">
-          42-song coming-of-age project with over 1,000,000 streams.
+          42-track coming-of-age project with over 1,000,000 streams.
+        </p>
+        <p class="exp42-hero-extra">
+          Every song has its own cover. Together, they form this wall.
         </p>
       </div>
     </section>
 
-    <section class="section">
-      <article class="project-card">
-        <div class="project-pill">Music</div>
-        <h3>Overview</h3>
-        <p class="project-line">
-          A long-form music experiment about growth, mistakes and momentum.
-        </p>
-        <div class="project-links">
-          <a href="index.html#projects" class="project-link">← Back to projects</a>
-        </div>
-      </article>
+    <!-- COLLAGE -->
+    <section class="section exp42-section">
+      <div class="section-header">
+        <h2>Artwork collage</h2>
+        <p>All 42 covers in one grid.</p>
+      </div>
+
+      <div class="exp42-collage">
+        <!-- 1–7 -->
+        <div class="exp42-tile exp42-tilt-l"><img src="images/exp42-01.png" alt="Experiment 42 cover 1" /></div>
+        <div class="exp42-tile exp42-tilt-s"><img src="images/exp42-02.png" alt="Experiment 42 cover 2" /></div>
+        <div class="exp42-tile exp42-tilt-r"><img src="images/exp42-03.png" alt="Experiment 42 cover 3" /></div>
+        <div class="exp42-tile exp42-tilt-l"><img src="images/exp42-04.png" alt="Experiment 42 cover 4" /></div>
+        <div class="exp42-tile exp42-tilt-s"><img src="images/exp42-05.png" alt="Experiment 42 cover 5" /></div>
+        <div class="exp42-tile exp42-tilt-r"><img src="images/exp42-06.png" alt="Experiment 42 cover 6" /></div>
+        <div class="exp42-tile exp42-tilt-l"><img src="images/exp42-07.png" alt="Experiment 42 cover 7" /></div>
+
+        <!-- 8–14 -->
+        <div class="exp42-tile exp42-tilt-r"><img src="images/exp42-08.png" alt="Experiment 42 cover 8" /></div>
+        <div class="exp42-tile exp42-tilt-s"><img src="images/exp42-09.png" alt="Experiment 42 cover 9" /></div>
+        <div class="exp42-tile exp42-tilt-l"><img src="images/exp42-10.png" alt="Experiment 42 cover 10" /></div>
+        <div class="exp42-tile exp42-tilt-r"><img src="images/exp42-11.png" alt="Experiment 42 cover 11" /></div>
+        <div class="exp42-tile exp42-tilt-s"><img src="images/exp42-12.png" alt="Experiment 42 cover 12" /></div>
+        <div class="exp42-tile exp42-tilt-l"><img src="images/exp42-13.png" alt="Experiment 42 cover 13" /></div>
+        <div class="exp42-tile exp42-tilt-r"><img src="images/exp42-14.png" alt="Experiment 42 cover 14" /></div>
+
+        <!-- 15–21 -->
+        <div class="exp42-tile exp42-tilt-s"><img src="images/exp42-15.png" alt="Experiment 42 cover 15" /></div>
+        <div class="exp42-tile exp42-tilt-l"><img src="images/exp42-16.png" alt="Experiment 42 cover 16" /></div>
+        <div class="exp42-tile exp42-tilt-r"><img src="images/exp42-17.png" alt="Experiment 42 cover 17" /></div>
+        <div class="exp42-tile exp42-tilt-s"><img src="images/exp42-18.png" alt="Experiment 42 cover 18" /></div>
+        <div class="exp42-tile exp42-tilt-l"><img src="images/exp42-19.png" alt="Experiment 42 cover 19" /></div>
+        <div class="exp42-tile exp42-tilt-r"><img src="images/exp42-20.png" alt="Experiment 42 cover 20" /></div>
+        <div class="exp42-tile exp42-tilt-s"><img src="images/exp42-21.png" alt="Experiment 42 cover 21" /></div>
+
+        <!-- 22–28 -->
+        <div class="exp42-tile exp42-tilt-l"><img src="images/exp42-22.png" alt="Experiment 42 cover 22" /></div>
+        <div class="exp42-tile exp42-tilt-r"><img src="images/exp42-23.png" alt="Experiment 42 cover 23" /></div>
+        <div class="exp42-tile exp42-tilt-s"><img src="images/exp42-24.png" alt="Experiment 42 cover 24" /></div>
+        <div class="exp42-tile exp42-tilt-l"><img src="images/exp42-25.png" alt="Experiment 42 cover 25" /></div>
+        <div class="exp42-tile exp42-tilt-r"><img src="images/exp42-26.png" alt="Experiment 42 cover 26" /></div>
+        <div class="exp42-tile exp42-tilt-s"><img src="images/exp42-27.png" alt="Experiment 42 cover 27" /></div>
+        <div class="exp42-tile exp42-tilt-l"><img src="images/exp42-28.png" alt="Experiment 42 cover 28" /></div>
+
+        <!-- 29–35 -->
+        <div class="exp42-tile exp42-tilt-r"><img src="images/exp42-29.png" alt="Experiment 42 cover 29" /></div>
+        <div class="exp42-tile exp42-tilt-s"><img src="images/exp42-30.png" alt="Experiment 42 cover 30" /></div>
+        <div class="exp42-tile exp42-tilt-l"><img src="images/exp42-31.png" alt="Experiment 42 cover 31" /></div>
+        <div class="exp42-tile exp42-tilt-r"><img src="images/exp42-32.png" alt="Experiment 42 cover 32" /></div>
+        <div class="exp42-tile exp42-tilt-s"><img src="images/exp42-33.png" alt="Experiment 42 cover 33" /></div>
+        <div class="exp42-tile exp42-tilt-l"><img src="images/exp42-34.png" alt="Experiment 42 cover 34" /></div>
+        <div class="exp42-tile exp42-tilt-r"><img src="images/exp42-35.png" alt="Experiment 42 cover 35" /></div>
+
+        <!-- 36–42 -->
+        <div class="exp42-tile exp42-tilt-s"><img src="images/exp42-36.png" alt="Experiment 42 cover 36" /></div>
+        <div class="exp42-tile exp42-tilt-l"><img src="images/exp42-37.png" alt="Experiment 42 cover 37" /></div>
+        <div class="exp42-tile exp42-tilt-r"><img src="images/exp42-38.png" alt="Experiment 42 cover 38" /></div>
+        <div class="exp42-tile exp42-tilt-s"><img src="images/exp42-39.png" alt="Experiment 42 cover 39" /></div>
+        <div class="exp42-tile exp42-tilt-l"><img src="images/exp42-40.png" alt="Experiment 42 cover 40" /></div>
+        <div class="exp42-tile exp42-tilt-r"><img src="images/exp42-41.png" alt="Experiment 42 cover 41" /></div>
+        <div class="exp42-tile exp42-tilt-s"><img src="images/exp42-42.png" alt="Experiment 42 cover 42" /></div>
+      </div>
+
+      <div class="exp42-meta-row">
+        <span>Best experienced with the full playlist on Spotify.</span>
+      </div>
+
+      <div style="margin-top:18px;">
+        <a href="index.html#projects" class="project-link">← Back to projects</a>
+      </div>
     </section>
   </main>
 
@@ -69,3 +208,4 @@
   </script>
 </body>
 </html>
+
