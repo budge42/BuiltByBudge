@@ -11,6 +11,152 @@
 
   <link rel="stylesheet" href="css/styles.css" />
   <meta name="description" content="G.I.R.L – Professional dance EP by Jack Budge." />
+
+  <!-- Page-specific styling -->
+  <style>
+    .girl-hero-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      align-items: flex-end;
+    }
+
+    .girl-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+    }
+
+    .girl-meta-pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .girl-cover-card {
+      max-width: 320px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: radial-gradient(circle at 20% 0%, #1f1630, #050505);
+    }
+
+    .girl-cover-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .girl-cover-caption {
+      padding: 10px 14px 12px;
+      font-size: 12px;
+      color: var(--text-soft);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .girl-cover-caption span {
+      opacity: 0.9;
+    }
+
+    .girl-cover-caption small {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 10px;
+    }
+
+    .girl-tracks {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .girl-track-row {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--card-border);
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .girl-track-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .girl-track-number {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .girl-track-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      min-width: 0;
+    }
+
+    .girl-track-title {
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .girl-track-sub {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .girl-track-audio {
+      flex-shrink: 0;
+      width: 180px;
+      max-width: 45%;
+    }
+
+    @media (max-width: 640px) {
+      .girl-hero-layout {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .girl-track-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .girl-track-audio {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .girl-cover-card {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="bg-gradient"></div>
@@ -36,27 +182,105 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
-      <div class="hero-content">
-        <p class="hero-kicker">Music</p>
-        <h1>G.I.R.L</h1>
-        <p class="hero-subtitle">
-          A dance EP landing on major editorial playlists.
-        </p>
+      <div class="girl-hero-layout">
+        <div class="hero-content">
+          <p class="hero-kicker">Music • EP</p>
+          <h1>G.I.R.L</h1>
+          <p class="hero-subtitle">
+            Four clean dance records built for late nights, long drives and big systems.
+          </p>
+
+          <div class="girl-meta-row">
+            <span class="girl-meta-pill">4 tracks</span>
+            <span class="girl-meta-pill">Dance / Electronic</span>
+          </div>
+        </div>
+
+        <aside class="girl-cover-card">
+          <img src="images/GIRL.png" alt="G.I.R.L cover artwork" />
+          <div class="girl-cover-caption">
+            <span>Cover art for G.I.R.L</span>
+            <small>BUILT BY BUDGE</small>
+          </div>
+        </aside>
       </div>
     </section>
 
+    <!-- TRACKLIST -->
     <section class="section">
-      <article class="project-card">
-        <div class="project-pill">Music</div>
-        <h3>Overview</h3>
-        <p class="project-line">
-          High-energy, clean dance records designed for clubs, cars and headphones.
-        </p>
-        <div class="project-links">
-          <a href="index.html#projects" class="project-link">← Back to projects</a>
+      <div class="section-header">
+        <h2>Tracklist</h2>
+        <p>Play the EP.</p>
+      </div>
+
+      <div class="girl-tracks">
+        <!-- 1. Get Right -->
+        <div class="girl-track-row">
+          <div class="girl-track-info">
+            <span class="girl-track-number">1</span>
+            <div class="girl-track-text">
+              <div class="girl-track-title">Get Right</div>
+              <div class="girl-track-sub">G.I.R.L</div>
+            </div>
+          </div>
+          <audio class="girl-track-audio" controls preload="none">
+            <!-- Update paths/filenames to match your setup -->
+            <source src="audio/get-right.wav" type="audio/wav" />
+            Your browser does not support the audio element.
+          </audio>
         </div>
-      </article>
+
+        <!-- 2. I Gave You Everything -->
+        <div class="girl-track-row">
+          <div class="girl-track-info">
+            <span class="girl-track-number">2</span>
+            <div class="girl-track-text">
+              <div class="girl-track-title">I Gave You Everything</div>
+              <div class="girl-track-sub">G.I.R.L</div>
+            </div>
+          </div>
+          <audio class="girl-track-audio" controls preload="none">
+            <source src="audio/i-gave-you-everything.wav" type="audio/wav" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+
+        <!-- 3. Reach You -->
+        <div class="girl-track-row">
+          <div class="girl-track-info">
+            <span class="girl-track-number">3</span>
+            <div class="girl-track-text">
+              <div class="girl-track-title">Reach You</div>
+              <div class="girl-track-sub">G.I.R.L</div>
+            </div>
+          </div>
+          <audio class="girl-track-audio" controls preload="none">
+            <source src="audio/reach-you.wav" type="audio/wav" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+
+        <!-- 4. Let You Go -->
+        <div class="girl-track-row">
+          <div class="girl-track-info">
+            <span class="girl-track-number">4</span>
+            <div class="girl-track-text">
+              <div class="girl-track-title">Let You Go</div>
+              <div class="girl-track-sub">G.I.R.L</div>
+            </div>
+          </div>
+          <audio class="girl-track-audio" controls preload="none">
+            <source src="audio/let-you-go.wav" type="audio/wav" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;">
+        <a href="index.html#projects" class="project-link">← Back to projects</a>
+      </div>
     </section>
   </main>
 
@@ -69,3 +293,4 @@
   </script>
 </body>
 </html>
+
