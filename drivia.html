@@ -11,6 +11,50 @@
 
   <link rel="stylesheet" href="css/styles.css" />
   <meta name="description" content="Drivia – Online multiplayer racing and trivia game by Jack Budge." />
+
+  <!-- Page-specific styling -->
+  <style>
+    .drivia-hero-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .drivia-app-card {
+      max-width: 220px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.9);
+    }
+
+    .drivia-app-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .drivia-app-caption {
+      padding: 10px 14px 12px;
+      font-size: 11px;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    @media (max-width: 640px) {
+      .drivia-hero-layout {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .drivia-app-card {
+        max-width: 180px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="bg-gradient"></div>
@@ -36,16 +80,29 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
-      <div class="hero-content">
-        <p class="hero-kicker">Game</p>
-        <h1>Drivia</h1>
-        <p class="hero-subtitle">
-          Online multiplayer racing with live trivia mid-race.
-        </p>
+      <div class="drivia-hero-layout">
+        <div class="hero-content">
+          <p class="hero-kicker">Game</p>
+          <h1>Drivia</h1>
+          <p class="hero-subtitle">
+            Online multiplayer racing with live trivia mid-race.
+          </p>
+        </div>
+
+        <!-- App icon card -->
+        <aside class="drivia-app-card">
+          <!-- Change the filename if your icon is named differently -->
+          <img src="images/drivia-icon.png" alt="Drivia app icon" />
+          <div class="drivia-app-caption">
+            DRIVIA · APP ICON
+          </div>
+        </aside>
       </div>
     </section>
 
+    <!-- OVERVIEW -->
     <section class="section">
       <article class="project-card">
         <div class="project-pill">Game</div>
@@ -53,7 +110,13 @@
         <p class="project-line">
           Drift, dodge and answer questions – first to the finish wins the race and the round.
         </p>
+
         <div class="project-links">
+          <!-- Replace the # with your live game URL -->
+          <a href="https://drivia-web.vercel.app/" target="_blank" class="project-link">Play Drivia</a>
+
+         
+
           <a href="index.html#projects" class="project-link">← Back to projects</a>
         </div>
       </article>
