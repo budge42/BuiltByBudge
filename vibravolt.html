@@ -10,7 +10,62 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css" />
-  <meta name="description" content="VibraVolt – Triboelectric nanogenerator energy concept by Jack Budge." />
+  <meta name="description" content="VibraVolt – Triboelectric nanogenerator concept that harvests wasted vibration to improve energy efficiency, recognised by the United Nations." />
+
+  <!-- Page-specific styling -->
+  <style>
+    .vibravolt-hero-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .vibravolt-hero-card {
+      max-width: 260px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.9);
+    }
+
+    .vibravolt-hero-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .vibravolt-hero-caption {
+      padding: 10px 14px 12px;
+      font-size: 11px;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .vibravolt-list {
+      margin-top: 10px;
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+
+    .vibravolt-list li + li {
+      margin-top: 4px;
+    }
+
+    @media (max-width: 640px) {
+      .vibravolt-hero-layout {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .vibravolt-hero-card {
+        max-width: 220px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="bg-gradient"></div>
@@ -36,24 +91,53 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
-      <div class="hero-content">
-        <p class="hero-kicker">Energy</p>
-        <h1>VibraVolt</h1>
-        <p class="hero-subtitle">
-          Triboelectric nanogenerator concept, recognised by the United Nations.
-        </p>
+      <div class="vibravolt-hero-layout">
+        <div class="hero-content">
+          <p class="hero-kicker">Energy</p>
+          <h1>VibraVolt</h1>
+          <p class="hero-subtitle">
+            A triboelectric nanogenerator concept that turns wasted vibration into usable micro-energy.
+          </p>
+          <p class="project-line" style="margin-top:10px;">
+            Designed to sit inside everyday appliances, heavy machinery and vehicles, VibraVolt aims to
+            make the world’s hardware more energy-efficient instead of letting vibration disappear as
+            noise and heat.
+          </p>
+        </div>
+
+        <!-- Hero image placeholder -->
+        <aside class="vibravolt-hero-card">
+          <!-- Put your image at: images/VibraVolt.png -->
+          <img src="images/VibraVolt.png" alt="VibraVolt concept illustration" />
+          <div class="vibravolt-hero-caption">
+            VIBRAVOLT · CONCEPT VISUAL
+          </div>
+        </aside>
       </div>
     </section>
 
+    <!-- OVERVIEW -->
     <section class="section">
       <article class="project-card">
         <div class="project-pill">Energy</div>
         <h3>Overview</h3>
         <p class="project-line">
-          Harnessing vibration and motion to generate usable micro-energy.
+          Most machines produce wasted energy in the form of vibration. VibraVolt captures that motion
+          using triboelectric layers, converts it into electrical charge, and feeds it back into the
+          system to improve efficiency instead of wasting it.
         </p>
-        <div class="project-links">
+
+        <ul class="vibravolt-list">
+          <li>Targets SDG 7 (clean and renewable energy) by improving energy efficiency through vibration harvesting.</li>
+          <li>Concept recognised with a United Nations sustainability award.</li>
+          <li>Potential to be embedded in appliances, industrial machinery and transport fleets.</li>
+          <li>Even a small efficiency gain at city scale (e.g. washing machines in Dubai) leads to
+              huge energy and emissions savings.</li>
+        </ul>
+
+        <div class="project-links" style="margin-top:14px;">
           <a href="index.html#projects" class="project-link">← Back to projects</a>
         </div>
       </article>
