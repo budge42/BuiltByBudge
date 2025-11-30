@@ -20,13 +20,26 @@
   <style>
     /* HERO WITH COVER IMAGE */
     .hero {
-      position: relative;
-      background-image: url("images/BuiltByBudge3.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center right; /* keep the big B to the right */
-      padding: 80px 0 96px 0;          /* tighter top padding so title lines up nicer */
-    }
+  position: relative;
+  background-image: url("images/BuiltByBudge3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+  /* 🔥 MATCH HEADER + PROJECTS PADDING */
+  padding: 160px 24px 120px 24px;
+  
+  /* Keeps text narrow like the rest of the site */
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1080px; /* aligns with project section width */
+}
+
 
     .hero::after {
       /* dark mask so text stays readable */
@@ -48,7 +61,7 @@
     }
 
     @media (max-width: 768px) {
-      .hero {
+      
         padding: 72px 0 72px 0;
         background-position: center;
       }
