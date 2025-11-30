@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="icon" type="image/png" href="images/builtbybudge-logo-mark.png">
+  <link rel="icon" type="image/png" href="images/builtbybudge-logo-mark.png">
 
   <title>Built By Budge – Jack Budge</title>
 
@@ -16,6 +16,32 @@
   <link rel="stylesheet" href="css/styles.css" />
 
   <meta name="description" content="Built By Budge – Apps, games, music and experiments by Jack Budge." />
+
+  <style>
+    /* 🔥 New hero background image */
+    .hero {
+      position: relative;
+      background-image: url("images/BuiltByBudge3.png");
+      background-repeat: no-repeat;
+      background-size: contain; /* or cover if you want full bleed */
+      background-position: center;
+      padding: 160px 0 120px 0;
+    }
+
+    .hero::after {
+      /* subtle dark mask so text stays readable */
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.85));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative; /* ensure hero text sits above image + mask */
+      z-index: 2;
+    }
+  </style>
 </head>
 <body>
   <div class="bg-gradient"></div>
@@ -94,7 +120,7 @@
             <div class="project-pill">Health</div>
             <h3>IngreedyIt</h3>
             <p class="project-line">
-              Education tool. Reached top 10 in Apple Health &amp; Fitness.
+              Education tool. Reached top 10 in Apple Health & Fitness.
             </p>
           </a>
         </article>
@@ -127,7 +153,6 @@
     <section id="contact" class="section">
       <div class="section-header">
         <h2>Contact</h2>
-
       </div>
 
       <div class="contact-card">
@@ -146,3 +171,4 @@
   </script>
 </body>
 </html>
+
