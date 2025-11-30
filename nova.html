@@ -20,7 +20,21 @@
       gap: 32px;
       align-items: center;
     }
-
+    .nova-icon-card {
+      width: 140px;
+      flex-shrink: 0;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.9);
+    }
+    .nova-icon-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--radius-lg);
+    }
     .nova-hero-extra {
       margin-top: 12px;
       font-size: 13px;
@@ -28,68 +42,15 @@
       max-width: 540px;
     }
 
-    .nova-store-row {
-      margin-top: 16px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .nova-store-button {
-      background: #ffffff;
-      color: #050505;
-      padding: 6px 16px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nova-store-button span {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 11px;
-      opacity: 0.7;
-    }
-
-    .nova-app-card {
-      max-width: 200px;
-      border-radius: 32px;
-      overflow: hidden;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.9);
-    }
-
-    .nova-app-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 28px;
-    }
-
-    .nova-app-caption {
-      padding: 10px 14px 12px;
-      font-size: 11px;
-      color: var(--text-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
     .nova-screens-section {
       padding-top: 10px;
     }
-
     .nova-screens-wrapper {
       margin-top: 18px;
       overflow-x: auto;
       padding-bottom: 10px;
       -webkit-overflow-scrolling: touch;
     }
-
     .nova-screens {
       display: flex;
       gap: 14px;
@@ -97,7 +58,6 @@
       scroll-snap-type: x mandatory;
       min-width: 100%;
     }
-
     .nova-screen {
       scroll-snap-align: start;
       flex: 0 0 auto;
@@ -109,14 +69,12 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.95);
     }
-
     .nova-screen img {
       display: block;
       width: 100%;
       height: auto;
       border-radius: 22px;
     }
-
     .nova-screens-hint {
       margin-top: 10px;
       font-size: 11px;
@@ -124,15 +82,6 @@
     }
 
     @media (max-width: 640px) {
-      .nova-hero-layout {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nova-app-card {
-        max-width: 180px;
-      }
-
       .nova-screen {
         width: 180px;
       }
@@ -173,30 +122,19 @@
             The world's most connected and intelligent health operating system.
           </p>
           <p class="nova-hero-extra">
-            NOVA brings movement, food, sleep, mind and medical data together into one living system.
-            It’s designed to feel beautiful, human and motivating – not clinical. One app that quietly
-            connects everything, then helps you actually use it.
+            NOVA brings movement, food, sleep, mind and medical data together into one living system. It’s designed to feel beautiful, human and motivating – not clinical. One app that quietly connects everything, then helps you actually use it.
           </p>
 
-          <!-- App Store button at top -->
-          <div class="nova-store-row">
-            <!-- Replace # with real App Store URL when live -->
-            <a href="#" target="_blank" class="nova-store-button">
-              <div>
-                <span>Download on the</span><br />
-                App Store
-              </div>
+          <div style="margin-top: 16px;">
+            <a href="https://apps.apple.com/nz/app/nova-the-health-app/id6748203442"
+               target="_blank" class="btn-primary">
+              View on App Store
             </a>
           </div>
         </div>
 
-        <!-- App icon card to the right of title -->
-        <aside class="nova-app-card">
-          <!-- Put your NOVA icon at: images/nova-icon.png -->
+        <aside class="nova-icon-card">
           <img src="images/nova-icon.png" alt="NOVA app icon" />
-          <div class="nova-app-caption">
-            NOVA · APP ICON
-          </div>
         </aside>
       </div>
     </section>
@@ -211,42 +149,20 @@
       <div class="nova-screens-wrapper">
         <div class="nova-screens">
           <!-- Replace each src with your actual App Store-style screenshots (phone vertical) -->
-          <figure class="nova-screen">
-            <img src="images/nova-01.png" alt="NOVA app screenshot 1" />
-          </figure>
-          <figure class="nova-screen">
-            <img src="images/nova-02.png" alt="NOVA app screenshot 2" />
-          </figure>
-          <figure class="nova-screen">
-            <img src="images/nova-03.png" alt="NOVA app screenshot 3" />
-          </figure>
-          <figure class="nova-screen">
-            <img src="images/nova-04.png" alt="NOVA app screenshot 4" />
-          </figure>
-          <figure class="nova-screen">
-            <img src="images/nova-05.png" alt="NOVA app screenshot 5" />
-          </figure>
-          <figure class="nova-screen">
-            <img src="images/nova-06.png" alt="NOVA app screenshot 6" />
-          </figure>
-          <figure class="nova-screen">
-            <img src="images/nova-07.png" alt="NOVA app screenshot 7" />
-          </figure>
-          <figure class="nova-screen">
-            <img src="images/nova-08.png" alt="NOVA app screenshot 8" />
-          </figure>
-          <figure class="nova-screen">
-            <img src="images/nova-09.png" alt="NOVA app screenshot 9" />
-          </figure>
-          <figure class="nova-screen">
-            <img src="images/nova-10.png" alt="NOVA app screenshot 10" />
-          </figure>
+          <figure class="nova-screen"><img src="images/nova-01.png" alt="NOVA screenshot 1"></figure>
+          <figure class="nova-screen"><img src="images/nova-02.png" alt="NOVA screenshot 2"></figure>
+          <figure class="nova-screen"><img src="images/nova-03.png" alt="NOVA screenshot 3"></figure>
+          <figure class="nova-screen"><img src="images/nova-04.png" alt="NOVA screenshot 4"></figure>
+          <figure class="nova-screen"><img src="images/nova-05.png" alt="NOVA screenshot 5"></figure>
+          <figure class="nova-screen"><img src="images/nova-06.png" alt="NOVA screenshot 6"></figure>
+          <figure class="nova-screen"><img src="images/nova-07.png" alt="NOVA screenshot 7"></figure>
+          <figure class="nova-screen"><img src="images/nova-08.png" alt="NOVA screenshot 8"></figure>
+          <figure class="nova-screen"><img src="images/nova-09.png" alt="NOVA screenshot 9"></figure>
+          <figure class="nova-screen"><img src="images/nova-10.png" alt="NOVA screenshot 10"></figure>
         </div>
       </div>
 
-      <p class="nova-screens-hint">
-        Tip: use your trackpad or mouse wheel horizontally to slide through the screens.
-      </p>
+      <p class="nova-screens-hint">Use trackpad or mouse wheel horizontally to slide through the screens.</p>
     </section>
 
     <!-- OVERVIEW -->
@@ -258,17 +174,12 @@
           One intelligent layer over your health – connecting data, habits and decisions in real time.
         </p>
         <p>
-          NOVA is a holistic health operating system. It tracks movement, running, training, sleep,
-          food, mood and more – then uses AI to surface insights, routines and gentle nudges that
-          actually fit your life. Instead of juggling a stack of disconnected apps, NOVA becomes the
-          single place where your health story lives.
+          NOVA is a holistic health operating system. It tracks movement, running, training, sleep, food, mood and more – then uses AI to surface insights, routines and gentle nudges that actually fit your life. Instead of juggling a stack of disconnected apps, NOVA becomes the single place where your health story lives.
         </p>
+        <div style="margin-top: 22px;">
+          <a href="index.html#projects" class="project-link">← Back to projects</a>
+        </div>
       </article>
-
-      <!-- Back link at the very bottom, like Experiment 42 -->
-      <div style="margin-top:18px;">
-        <a href="index.html#projects" class="project-link">← Back to projects</a>
-      </div>
     </section>
   </main>
 
