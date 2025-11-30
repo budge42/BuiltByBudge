@@ -1,34 +1,186 @@
-<style>
-  /* New hero background */
-  .hero {
-    position: relative;
-    background-image: url("images/BuiltByBudge3.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding: 220px 0 140px 0; /* bigger top spacing */
-  }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="images/builtbybudge-logo-mark.png">
 
-  .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(0,0,0,0.55),
-      rgba(0,0,0,0.9)
-    );
-    pointer-events: none;
-  }
+  <title>Built By Budge – Jack Budge</title>
 
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    margin-left: 40px; /* aligns with Built By Budge header */
-  }
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  /* Fix spacing before Projects */
-  #projects {
-    padding-top: 60px;
-  }
-</style>
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <meta name="description" content="Built By Budge – Apps, games, music and experiments by Jack Budge." />
+
+  <style>
+    /* HERO WITH COVER IMAGE */
+    .hero {
+      position: relative;
+      background-image: url("images/BuiltByBudge3.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center right; /* keep the big B to the right */
+      padding: 80px 0 96px 0;          /* tighter top padding so title lines up nicer */
+    }
+
+    .hero::after {
+      /* dark mask so text stays readable */
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.9)
+      );
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative; /* above image + mask */
+      z-index: 2;
+      max-width: 640px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 72px 0 72px 0;
+        background-position: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <img
+        src="images/builtbybudge-logo-mark.png"
+        alt="Built By Budge logo"
+        class="brand-logo-img"
+      />
+      <div class="brand-text">
+        <span class="brand-title">Built By Budge</span>
+      </div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-kicker">Tech • Music • Health • Energy</p>
+        <h1>Turning thoughts into things.</h1>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="section-header">
+        <h2>Projects</h2>
+        <p>A collection of my work.</p>
+      </div>
+
+      <div class="project-grid">
+        <!-- Experiment 42 -->
+        <article class="project-card">
+          <a href="experiment-42.html" style="text-decoration:none;color:inherit;display:block;">
+            <div class="project-pill">Music</div>
+            <h3>Experiment 42</h3>
+            <p class="project-line">
+              42-song coming-of-age project with 1,000,000 streams.
+            </p>
+          </a>
+        </article>
+
+        <!-- NOVA -->
+        <article class="project-card">
+          <a href="nova.html" style="text-decoration:none;color:inherit;display:block;">
+            <div class="project-pill">Health</div>
+            <h3>NOVA</h3>
+            <p class="project-line">
+              The future of health. A connected, intelligent and human operating system.
+            </p>
+          </a>
+        </article>
+
+        <!-- VibraVolt -->
+        <article class="project-card">
+          <a href="vibravolt.html" style="text-decoration:none;color:inherit;display:block;">
+            <div class="project-pill">Energy</div>
+            <h3>VibraVolt</h3>
+            <p class="project-line">
+              Generate electricity from wasted vibrations, awarded by the United Nations.
+            </p>
+          </a>
+        </article>
+
+        <!-- IngreedyIt -->
+        <article class="project-card">
+          <a href="ingreedyit.html" style="text-decoration:none;color:inherit;display:block;">
+            <div class="project-pill">Health</div>
+            <h3>IngreedyIt</h3>
+            <p class="project-line">
+              Education tool. Reached top 10 in Apple Health &amp; Fitness.
+            </p>
+          </a>
+        </article>
+
+        <!-- GIRL -->
+        <article class="project-card">
+          <a href="girl.html" style="text-decoration:none;color:inherit;display:block;">
+            <div class="project-pill">Music</div>
+            <h3>G.I.R.L</h3>
+            <p class="project-line">
+              Professional Dance EP landing on major editorial playlists.
+            </p>
+          </a>
+        </article>
+
+        <!-- Drivia -->
+        <article class="project-card">
+          <a href="drivia.html" style="text-decoration:none;color:inherit;display:block;">
+            <div class="project-pill">Game</div>
+            <h3>Drivia</h3>
+            <p class="project-line">
+              Online multiplayer racing and trivia game.
+            </p>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="section-header">
+        <h2>Contact</h2>
+      </div>
+
+      <div class="contact-card">
+        <p>For collaboration, investment or interesting problems:</p>
+        <a href="mailto:jack@budge.co.z" class="btn-primary">Email Me</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Built By Budge</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
