@@ -20,29 +20,16 @@
   <style>
     /* HERO WITH COVER IMAGE */
     .hero {
-  position: relative;
-  background-image: url("images/BuiltByBudge3.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  
-  /* 🔥 MATCH HEADER + PROJECTS PADDING */
-  padding: 160px 24px 120px 24px;
-  
-  /* Keeps text narrow like the rest of the site */
-  display: flex;
-  justify-content: flex-start;
-}
+      position: relative;
+      background-image: url("images/BuiltByBudge3.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      padding: 140px 0 120px 0; /* top/bottom only – horizontal comes from hero-inner */
+    }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1080px; /* aligns with project section width */
-}
-
-
+    /* Dark mask so text stays readable */
     .hero::after {
-      /* dark mask so text stays readable */
       content: "";
       position: absolute;
       inset: 0;
@@ -54,16 +41,31 @@
       pointer-events: none;
     }
 
-    .hero-content {
-      position: relative; /* above image + mask */
+    /* Matches the width + padding of your sections/header */
+    .hero-inner {
+      position: relative;
       z-index: 2;
-      max-width: 640px;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .hero-content {
+      max-width: 520px;
     }
 
     @media (max-width: 768px) {
-      
-        padding: 72px 0 72px 0;
-        background-position: center;
+      .hero {
+        padding: 96px 0 72px 0;
+        background-position: center top;
+      }
+
+      .hero-inner {
+        padding: 0 20px;
+      }
+
+      .hero-content {
+        max-width: none;
       }
     }
   </style>
@@ -92,9 +94,11 @@
   <main>
     <!-- HERO -->
     <section class="hero">
-      <div class="hero-content">
-        <p class="hero-kicker">Tech • Music • Health • Energy</p>
-        <h1>Turning thoughts into things.</h1>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="hero-kicker">Tech • Music • Health • Energy</p>
+          <h1>Turning thoughts into things.</h1>
+        </div>
       </div>
     </section>
 
@@ -150,7 +154,7 @@
           </a>
         </article>
 
-        <!-- GIRL -->
+        <!-- G.I.R.L -->
         <article class="project-card">
           <a href="girl.html" style="text-decoration:none;color:inherit;display:block;">
             <div class="project-pill">Music</div>
