@@ -14,11 +14,69 @@
 
   <!-- Page-specific styling -->
   <style>
+    .nova-hero-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      align-items: center;
+    }
+
     .nova-hero-extra {
       margin-top: 12px;
       font-size: 13px;
       color: var(--text-soft);
       max-width: 540px;
+    }
+
+    .nova-store-row {
+      margin-top: 16px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nova-store-button {
+      background: #ffffff;
+      color: #050505;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nova-store-button span {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 11px;
+      opacity: 0.7;
+    }
+
+    .nova-app-card {
+      max-width: 200px;
+      border-radius: 32px;
+      overflow: hidden;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.9);
+    }
+
+    .nova-app-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 28px;
+    }
+
+    .nova-app-caption {
+      padding: 10px 14px 12px;
+      font-size: 11px;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
     }
 
     .nova-screens-section {
@@ -66,6 +124,15 @@
     }
 
     @media (max-width: 640px) {
+      .nova-hero-layout {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nova-app-card {
+        max-width: 180px;
+      }
+
       .nova-screen {
         width: 180px;
       }
@@ -98,17 +165,39 @@
   <main>
     <!-- HERO -->
     <section class="hero">
-      <div class="hero-content">
-        <p class="hero-kicker">Health</p>
-        <h1>NOVA</h1>
-        <p class="hero-subtitle">
-          The world's most connected and intelligent health operating system.
-        </p>
-        <p class="nova-hero-extra">
-          NOVA brings movement, food, sleep, mind and medical data together into one living system.
-          It’s designed to feel beautiful, human and motivating – not clinical. One app that quietly
-          connects everything, then helps you actually use it.
-        </p>
+      <div class="nova-hero-layout">
+        <div class="hero-content">
+          <p class="hero-kicker">Health</p>
+          <h1>NOVA</h1>
+          <p class="hero-subtitle">
+            The world's most connected and intelligent health operating system.
+          </p>
+          <p class="nova-hero-extra">
+            NOVA brings movement, food, sleep, mind and medical data together into one living system.
+            It’s designed to feel beautiful, human and motivating – not clinical. One app that quietly
+            connects everything, then helps you actually use it.
+          </p>
+
+          <!-- App Store button at top -->
+          <div class="nova-store-row">
+            <!-- Replace # with real App Store URL when live -->
+            <a href="#" target="_blank" class="nova-store-button">
+              <div>
+                <span>Download on the</span><br />
+                App Store
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- App icon card to the right of title -->
+        <aside class="nova-app-card">
+          <!-- Put your NOVA icon at: images/nova-icon.png -->
+          <img src="images/nova-icon.png" alt="NOVA app icon" />
+          <div class="nova-app-caption">
+            NOVA · APP ICON
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -169,17 +258,17 @@
           One intelligent layer over your health – connecting data, habits and decisions in real time.
         </p>
         <p>
-          NOVA is a holistic health operating system. It tracks movement, running, training, sleep, food,
-          mood and more – then uses AI to surface insights, routines and gentle nudges that actually fit
-          your life. Instead of juggling a stack of disconnected apps, NOVA becomes the single place
-          where your health story lives.
+          NOVA is a holistic health operating system. It tracks movement, running, training, sleep,
+          food, mood and more – then uses AI to surface insights, routines and gentle nudges that
+          actually fit your life. Instead of juggling a stack of disconnected apps, NOVA becomes the
+          single place where your health story lives.
         </p>
-        <div class="project-links">
-          <!-- Swap # for real App Store link when live -->
-          <a href="#" target="_blank" class="project-link">View on App Store</a>
-          <a href="index.html#projects" class="project-link">← Back to projects</a>
-        </div>
       </article>
+
+      <!-- Back link at the very bottom, like Experiment 42 -->
+      <div style="margin-top:18px;">
+        <a href="index.html#projects" class="project-link">← Back to projects</a>
+      </div>
     </section>
   </main>
 
