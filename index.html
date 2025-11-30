@@ -17,29 +17,42 @@
 
   <meta name="description" content="Built By Budge – Apps, games, music and experiments by Jack Budge." />
 
+  <!-- Page-specific hero styling -->
   <style>
-    /* 🔥 New hero background image */
-    .hero {
-      position: relative;
-      background-image: url("images/BuiltByBudge3.png");
-      background-repeat: no-repeat;
-      background-size: cover; /* or cover if you want full bleed */
-      background-position: center;
-      padding: 160px 0 120px 0;
+    .hero-layout {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
     }
 
-    .hero::after {
-      /* subtle dark mask so text stays readable */
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.85));
-      pointer-events: none;
+    .hero-image-card {
+      flex: 0 0 auto;
+      max-width: 360px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--card-bg, #050505);
+      border: 1px solid var(--card-border, rgba(255,255,255,0.08));
+      box-shadow: 0 26px 60px rgba(0, 0, 0, 0.95);
     }
 
-    .hero-content {
-      position: relative; /* ensure hero text sits above image + mask */
-      z-index: 2;
+    .hero-image-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      .hero-layout {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-image-card {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
@@ -67,9 +80,17 @@
   <main>
     <!-- HERO -->
     <section class="hero">
-      <div class="hero-content">
-        <p class="hero-kicker">Tech • Music • Health • Energy</p>
-        <h1>Turning thoughts into things.</h1>
+      <div class="hero-layout">
+        <div class="hero-content">
+          <p class="hero-kicker">Tech • Music • Health • Energy</p>
+          <h1>Turning thoughts into things.</h1>
+        </div>
+
+        <!-- Hero image card -->
+        <aside class="hero-image-card">
+          <!-- Make sure this file exists at /images/BuiltByBudge3.png -->
+          <img src="images/BuiltByBudge3.png" alt="Built By Budge artwork" />
+        </aside>
       </div>
     </section>
 
@@ -120,7 +141,7 @@
             <div class="project-pill">Health</div>
             <h3>IngreedyIt</h3>
             <p class="project-line">
-              Education tool. Reached top 10 in Apple Health & Fitness.
+              Education tool. Reached top 10 in Apple Health &amp; Fitness.
             </p>
           </a>
         </article>
