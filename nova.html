@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOVA – Built By Budge</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <meta name="description" content="NOVA – The world's most connected and intelligent health operating system by Jack Budge." />
+
+  <!-- Page-specific styling -->
+  <style>
+    .nova-hero-extra {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--text-soft);
+      max-width: 540px;
+    }
+
+    .nova-screens-section {
+      padding-top: 10px;
+    }
+
+    .nova-screens-wrapper {
+      margin-top: 18px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .nova-screens {
+      display: flex;
+      gap: 14px;
+      padding-bottom: 4px;
+      scroll-snap-type: x mandatory;
+      min-width: 100%;
+    }
+
+    .nova-screen {
+      scroll-snap-align: start;
+      flex: 0 0 auto;
+      width: 220px;
+      max-width: 55vw;
+      border-radius: 26px;
+      padding: 6px;
+      background: radial-gradient(circle at 20% 0%, #161616, #050505);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.95);
+    }
+
+    .nova-screen img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 22px;
+    }
+
+    .nova-screens-hint {
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    @media (max-width: 640px) {
+      .nova-screen {
+        width: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-gradient"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <a href="index.html" style="display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;">
+        <img
+          src="images/builtbybudge-logo-mark.png"
+          alt="Built By Budge logo"
+          class="brand-logo-img"
+        />
+        <div class="brand-text">
+          <span class="brand-title">Built By Budge</span>
+        </div>
+      </a>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-kicker">Health</p>
+        <h1>NOVA</h1>
+        <p class="hero-subtitle">
+          The world's most connected and intelligent health operating system.
+        </p>
+        <p class="nova-hero-extra">
+          NOVA brings movement, food, sleep, mind and medical data together into one living system.
+          It’s designed to feel beautiful, human and motivating – not clinical. One app that quietly
+          connects everything, then helps you actually use it.
+        </p>
+      </div>
+    </section>
+
+    <!-- SCREENSHOTS / SCROLL WHEEL -->
+    <section class="section nova-screens-section">
+      <div class="section-header">
+        <h2>App Screens</h2>
+        <p>Scroll sideways to explore the product.</p>
+      </div>
+
+      <div class="nova-screens-wrapper">
+        <div class="nova-screens">
+          <!-- Replace each src with your actual App Store-style screenshots (phone vertical) -->
+          <figure class="nova-screen">
+            <img src="images/nova-01.png" alt="NOVA app screenshot 1" />
+          </figure>
+          <figure class="nova-screen">
+            <img src="images/nova-02.png" alt="NOVA app screenshot 2" />
+          </figure>
+          <figure class="nova-screen">
+            <img src="images/nova-03.png" alt="NOVA app screenshot 3" />
+          </figure>
+          <figure class="nova-screen">
+            <img src="images/nova-04.png" alt="NOVA app screenshot 4" />
+          </figure>
+          <figure class="nova-screen">
+            <img src="images/nova-05.png" alt="NOVA app screenshot 5" />
+          </figure>
+          <figure class="nova-screen">
+            <img src="images/nova-06.png" alt="NOVA app screenshot 6" />
+          </figure>
+          <figure class="nova-screen">
+            <img src="images/nova-07.png" alt="NOVA app screenshot 7" />
+          </figure>
+          <figure class="nova-screen">
+            <img src="images/nova-08.png" alt="NOVA app screenshot 8" />
+          </figure>
+          <figure class="nova-screen">
+            <img src="images/nova-09.png" alt="NOVA app screenshot 9" />
+          </figure>
+          <figure class="nova-screen">
+            <img src="images/nova-10.png" alt="NOVA app screenshot 10" />
+          </figure>
+        </div>
+      </div>
+
+      <p class="nova-screens-hint">
+        Tip: use your trackpad or mouse wheel horizontally to slide through the screens.
+      </p>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="section">
+      <article class="project-card">
+        <div class="project-pill">Health</div>
+        <h3>Overview</h3>
+        <p class="project-line">
+          One intelligent layer over your health – connecting data, habits and decisions in real time.
+        </p>
+        <p>
+          NOVA is a holistic health operating system. It tracks movement, running, training, sleep, food,
+          mood and more – then uses AI to surface insights, routines and gentle nudges that actually fit
+          your life. Instead of juggling a stack of disconnected apps, NOVA becomes the single place
+          where your health story lives.
+        </p>
+        <div class="project-links">
+          <!-- Swap # for real App Store link when live -->
+          <a href="#" target="_blank" class="project-link">View on App Store</a>
+          <a href="index.html#projects" class="project-link">← Back to projects</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Built By Budge</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
