@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="css/styles.css" />
   <meta name="description" content="NOVA – The world's most connected and intelligent health operating system by Jack Budge." />
 
-  <!-- Page-specific styling -->
   <style>
     .nova-hero-layout {
       display: flex;
@@ -91,9 +90,196 @@
       color: var(--text-soft);
     }
 
+    .legal-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .legal-btn {
+      appearance: none;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-primary, #ffffff);
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      padding: 12px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .legal-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .legal-btn:focus-visible,
+    .modal-close:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.9);
+      outline-offset: 2px;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 9999;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.24s ease, visibility 0.24s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .modal {
+      width: min(920px, 100%);
+      max-height: 88vh;
+      overflow: hidden;
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 30%),
+        linear-gradient(180deg, rgba(17,17,17,0.98), rgba(8,8,8,0.98));
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      box-shadow: 0 32px 90px rgba(0, 0, 0, 0.65);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 22px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .modal-title-wrap h3 {
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.1;
+      color: #ffffff;
+    }
+
+    .modal-subtitle {
+      margin: 6px 0 0;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .modal-close {
+      appearance: none;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+      color: #ffffff;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+      flex-shrink: 0;
+    }
+
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.10);
+      transform: scale(1.03);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .modal-body {
+      padding: 22px;
+      overflow-y: auto;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    .modal-body h4 {
+      margin: 24px 0 8px;
+      font-size: 17px;
+      color: #ffffff;
+    }
+
+    .modal-body h4:first-child {
+      margin-top: 0;
+    }
+
+    .modal-body p {
+      margin: 0 0 14px;
+    }
+
+    .modal-body ul {
+      margin: 0 0 16px 20px;
+      padding: 0;
+    }
+
+    .modal-body li {
+      margin-bottom: 8px;
+    }
+
+    .modal-body strong {
+      color: #ffffff;
+    }
+
+    .modal-body .legal-date {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.62);
+      margin-bottom: 18px;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
     @media (max-width: 640px) {
       .nova-screen {
         width: 180px;
+      }
+
+      .modal {
+        max-height: 90vh;
+        border-radius: 20px;
+      }
+
+      .modal-header,
+      .modal-body {
+        padding: 18px;
+      }
+
+      .modal-title-wrap h3 {
+        font-size: 19px;
+      }
+
+      .legal-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .legal-btn {
+        width: 100%;
+        justify-content: center;
       }
     }
   </style>
@@ -136,13 +322,13 @@
           <div style="margin-top: 16px;">
             <a href="https://apps.apple.com/nz/app/nova-the-health-app/id6748203442"
                target="_blank"
+               rel="noopener noreferrer"
                class="btn-primary">
               Download
             </a>
           </div>
         </div>
 
-        <!-- App icon -->
         <aside class="nova-icon-card">
           <img src="images/nova-icon.png" alt="NOVA app icon" />
         </aside>
@@ -158,16 +344,16 @@
 
       <div class="nova-screens-wrapper">
         <div class="nova-screens">
-          <figure class="nova-screen"><img src="images/nova-01.png" /></figure>
-          <figure class="nova-screen"><img src="images/nova-02.png" /></figure>
-          <figure class="nova-screen"><img src="images/nova-03.png" /></figure>
-          <figure class="nova-screen"><img src="images/nova-04.png" /></figure>
-          <figure class="nova-screen"><img src="images/nova-05.png" /></figure>
-          <figure class="nova-screen"><img src="images/nova-06.png" /></figure>
-          <figure class="nova-screen"><img src="images/nova-07.png" /></figure>
-          <figure class="nova-screen"><img src="images/nova-08.png" /></figure>
-          <figure class="nova-screen"><img src="images/nova-09.png" /></figure>
-          <figure class="nova-screen"><img src="images/nova-10.png" /></figure>
+          <figure class="nova-screen"><img src="images/nova-01.png" alt="NOVA app screen 1" /></figure>
+          <figure class="nova-screen"><img src="images/nova-02.png" alt="NOVA app screen 2" /></figure>
+          <figure class="nova-screen"><img src="images/nova-03.png" alt="NOVA app screen 3" /></figure>
+          <figure class="nova-screen"><img src="images/nova-04.png" alt="NOVA app screen 4" /></figure>
+          <figure class="nova-screen"><img src="images/nova-05.png" alt="NOVA app screen 5" /></figure>
+          <figure class="nova-screen"><img src="images/nova-06.png" alt="NOVA app screen 6" /></figure>
+          <figure class="nova-screen"><img src="images/nova-07.png" alt="NOVA app screen 7" /></figure>
+          <figure class="nova-screen"><img src="images/nova-08.png" alt="NOVA app screen 8" /></figure>
+          <figure class="nova-screen"><img src="images/nova-09.png" alt="NOVA app screen 9" /></figure>
+          <figure class="nova-screen"><img src="images/nova-10.png" alt="NOVA app screen 10" /></figure>
         </div>
       </div>
     </section>
@@ -188,10 +374,15 @@
           and gentle nudges that fit your life. Instead of juggling disconnected apps, NOVA becomes the single place 
           where your health story lives. NOVA does not track or sell your data, everything stays safely on your device.
         </p>
+
+        <div class="legal-buttons">
+          <button type="button" class="legal-btn" data-modal-target="termsModal">Terms of Use</button>
+          <button type="button" class="legal-btn" data-modal-target="privacyModal">Privacy Policy</button>
+        </div>
       </article>
     </section>
 
-    <!-- GLOBAL BOTTOM LINK (Correct placement like Experiment 42) -->
+    <!-- GLOBAL BOTTOM LINK -->
     <section class="section">
       <a href="index.html#projects" class="project-link">← Back to projects</a>
     </section>
@@ -201,9 +392,312 @@
     <p>© <span id="year"></span> Built By Budge</p>
   </footer>
 
+  <!-- Terms of Use Modal -->
+  <div class="modal-overlay" id="termsModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="termsModalTitle">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <h3 id="termsModalTitle">Terms of Use</h3>
+          <p class="modal-subtitle">NOVA: The Health App</p>
+        </div>
+        <button type="button" class="modal-close" data-close-modal aria-label="Close Terms of Use">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="legal-date">Last Updated: 9th August 2025</p>
+
+        <h4>1. Introduction</h4>
+        <p>
+          These Terms of Use govern your access to and use of the NOVA: The Health App ("NOVA", "we", "our", or "us").
+          By accessing or using NOVA, you agree to comply with and be bound by these Terms.
+          If you do not agree to these Terms, please do not use the app.
+        </p>
+
+        <h4>2. User Eligibility</h4>
+        <p>
+          To use NOVA, you must be at least 13 years of age (or the legal age of majority in your jurisdiction, if higher)
+          and have the capacity to enter into a legally binding agreement. By using NOVA, you confirm that you meet these eligibility requirements.
+        </p>
+
+        <h4>3. Account Registration</h4>
+        <p>
+          To access certain features of NOVA, you may be required to register an account by providing your name and email address.
+          You agree to provide accurate, current, and complete information during the registration process and update this information if necessary.
+        </p>
+        <p>
+          <strong>Account Security:</strong> You are responsible for maintaining the confidentiality of your account and password
+          and for all activities that occur under your account. You agree to notify us immediately of any unauthorized access to
+          or use of your account.
+        </p>
+
+        <h4>4. Use of the App</h4>
+        <p>
+          You may use NOVA only for lawful purposes and in accordance with these Terms. You agree not to:
+        </p>
+        <ul>
+          <li>Use NOVA in any way that violates any applicable local, national, or international law or regulation.</li>
+          <li>Attempt to access or interfere with the security or functionality of NOVA or any system associated with the app.</li>
+          <li>Use NOVA to transmit any harmful or unlawful content, including but not limited to malware, viruses, or other malicious code.</li>
+        </ul>
+
+        <h4>5. No Health Data Collection</h4>
+        <p>
+          NOVA does not collect, store, or process any personal health data. The only data collected is your name and email for authentication purposes.
+          You agree not to input any health-related data into NOVA, and you acknowledge that NOVA is not intended to provide medical or health advice.
+        </p>
+
+        <h4>6. Privacy and Data Usage</h4>
+        <p>
+          By using NOVA, you consent to the collection and use of your data as described in our Privacy Policy.
+          We do not share, sell, or rent your personal information to third parties.
+        </p>
+
+        <h4>7. Restrictions on Use</h4>
+        <p>You agree not to:</p>
+        <ul>
+          <li>Copy, modify, distribute, or create derivative works based on NOVA, in whole or in part.</li>
+          <li>Reverse engineer, decompile, disassemble, or attempt to extract the source code of the app, unless permitted by applicable law.</li>
+          <li>Use NOVA in any manner that could damage, disable, overburden, or impair the app or interfere with others’ use of the app.</li>
+        </ul>
+
+        <h4>8. Termination</h4>
+        <p>
+          We reserve the right to suspend or terminate your access to NOVA at our discretion, including if you breach these Terms.
+          Upon termination, all rights granted to you under these Terms will immediately cease, and you agree to discontinue use of NOVA.
+        </p>
+
+        <h4>9. Disclaimers and Limitation of Liability</h4>
+        <p>
+          <strong>No Medical Advice:</strong> NOVA is not intended to provide medical, health, or fitness advice.
+          You should always seek professional advice before making decisions based on any information provided within the app.
+        </p>
+        <p>
+          <strong>No Liability:</strong> To the fullest extent permitted by law, NOVA and its creators are not liable for any direct,
+          indirect, incidental, special, or consequential damages, including but not limited to loss of data, loss of profits,
+          or any other losses arising from your use or inability to use the app.
+        </p>
+        <p>
+          <strong>App Availability:</strong> We do not guarantee that NOVA will be available, uninterrupted, or free from errors at all times.
+          We reserve the right to suspend or discontinue the app at any time.
+        </p>
+
+        <h4>10. Indemnification</h4>
+        <p>
+          You agree to indemnify, defend, and hold harmless NOVA, its creators, affiliates, and their respective employees,
+          agents, and partners from any claims, losses, damages, liabilities, or expenses (including reasonable attorney fees)
+          arising out of your use or misuse of NOVA, your violation of these Terms, or your infringement of any rights of a third party.
+        </p>
+
+        <h4>11. Third-Party Links and Services</h4>
+        <p>
+          NOVA may contain links to third-party websites or services. These links are provided for your convenience.
+          We do not control, endorse, or take responsibility for the content, privacy practices, or terms of use of third-party sites or services.
+        </p>
+
+        <h4>12. Changes to Terms</h4>
+        <p>
+          We may update these Terms from time to time. Any changes will be posted on this page, and the updated Terms will be effective immediately upon posting.
+          We encourage you to review these Terms regularly to stay informed about any updates.
+        </p>
+
+        <h4>13. Governing Law</h4>
+        <p>
+          These Terms are governed by and construed in accordance with the laws of New Zealand.
+          Any disputes arising from or relating to these Terms will be subject to the exclusive jurisdiction of the courts of New Zealand.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Privacy Policy Modal -->
+  <div class="modal-overlay" id="privacyModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="privacyModalTitle">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <h3 id="privacyModalTitle">Privacy Policy</h3>
+          <p class="modal-subtitle">NOVA: The Health App</p>
+        </div>
+        <button type="button" class="modal-close" data-close-modal aria-label="Close Privacy Policy">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="legal-date">Last Updated: December 16, 2025</p>
+
+        <h4>1. Introduction</h4>
+        <p>
+          Thank you for choosing NOVA. Your privacy is a core design principle of the app.
+          This Privacy Policy explains how information is handled when you use NOVA.
+          By accessing or using NOVA, you agree to the practices described below.
+        </p>
+
+        <h4>2. Information We Collect</h4>
+        <p>NOVA is designed to minimize data collection.</p>
+        <p>We collect only:</p>
+        <ul>
+          <li><strong>Account information:</strong> Your first name and email address, used solely for authentication and account management.</li>
+        </ul>
+        <p>
+          We do not build personal profiles, sell user data, or use data for advertising.
+        </p>
+
+        <h4>3. Health &amp; Wellness Data Handling</h4>
+        <p>
+          Health-related inputs you choose to enter into NOVA (such as journal entries, sleep logs, blood markers,
+          ingredient scans, or wellness scores):
+        </p>
+        <ul>
+          <li>Are stored locally on your device</li>
+          <li>Are not stored on NOVA’s servers</li>
+          <li>Can be deleted by you at any time from within the app</li>
+        </ul>
+        <p>
+          NOVA does not maintain a centralized database of user health records.
+        </p>
+
+        <h4>4. Local Data Storage &amp; Device Security</h4>
+        <p>Data stored locally in NOVA relies on your device’s operating system security features.</p>
+        <p>Please note:</p>
+        <ul>
+          <li>NOVA does not maintain independent cloud backups of your health data</li>
+          <li>If your device is compromised (e.g. jailbroken, rooted, or physically accessed), locally stored data may be accessible</li>
+          <li>You are responsible for securing your device using system-level protections (such as passcodes or biometric locks)</li>
+        </ul>
+
+        <h4>5. AI Processing &amp; Third-Party Services</h4>
+        <p>
+          Some features in NOVA use third-party AI services (such as OpenAI) to generate responses based on user-provided inputs.
+        </p>
+        <p>Examples include:</p>
+        <ul>
+          <li>Ingredient analysis</li>
+          <li>Blood marker summaries</li>
+          <li>Journal reflections</li>
+          <li>Supplement education features</li>
+        </ul>
+        <p><strong>How this works:</strong></p>
+        <ul>
+          <li>Only the information required to generate a response is sent</li>
+          <li>Requests do not include your name, email address, or account identifiers</li>
+          <li>Data is transmitted securely using industry-standard encryption (HTTPS/TLS)</li>
+          <li>Inputs may be temporarily processed by the third-party service solely to generate a response</li>
+          <li>For AI services accessed via API (such as OpenAI), user inputs are not used to train or improve their models and are not retained long-term, in accordance with the provider’s published API data usage policies</li>
+          <li>NOVA does not control how third-party services process data internally. These services operate under their own privacy policies (for example, OpenAI’s Privacy Policy)</li>
+        </ul>
+
+        <h4>6. How We Use Information</h4>
+        <p>Information is used strictly to:</p>
+        <ul>
+          <li>Authenticate and manage your account</li>
+          <li>Provide app functionality and AI-assisted features</li>
+          <li>Communicate essential account or service updates</li>
+        </ul>
+        <p>
+          We do not sell personal data, share user content for marketing, or use health information for advertising or profiling.
+        </p>
+
+        <h4>7. Data Security</h4>
+        <p>We take reasonable technical measures to protect information, including:</p>
+        <ul>
+          <li>Secure network communication (HTTPS/TLS)</li>
+          <li>Minimization of data collection</li>
+          <li>Local-only storage for sensitive wellness information</li>
+        </ul>
+        <p>
+          However, no system can guarantee absolute security. Use of the app is at your discretion.
+        </p>
+
+        <h4>8. Health &amp; Medical Disclaimer</h4>
+        <p>NOVA is a wellness and educational tool. It:</p>
+        <ul>
+          <li>Does not provide medical advice, diagnosis, or treatment</li>
+          <li>Is not a medical device or healthcare service</li>
+          <li>Should not replace consultation with qualified healthcare professionals</li>
+        </ul>
+        <p>
+          Always seek professional medical advice regarding health decisions.
+        </p>
+
+        <h4>9. Limitation of Liability</h4>
+        <p>
+          By using NOVA, you acknowledge that:
+        </p>
+        <ul>
+          <li>You are responsible for how you interpret and use information provided by the app</li>
+          <li>All insights are informational and non-prescriptive</li>
+        </ul>
+
+        <h4>10. Changes to This Policy</h4>
+        <p>
+          We may update this Privacy Policy periodically. Updates will be reflected by the “Last Updated” date above.
+          Continued use of NOVA after changes constitutes acceptance of the revised policy.
+        </p>
+      </div>
+    </div>
+  </div>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    const modalTriggers = document.querySelectorAll('[data-modal-target]');
+    const modals = document.querySelectorAll('.modal-overlay');
+    const closeButtons = document.querySelectorAll('[data-close-modal]');
+    let lastFocusedElement = null;
+
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (!modal) return;
+
+      lastFocusedElement = document.activeElement;
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+
+      const closeBtn = modal.querySelector('.modal-close');
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function closeModal(modal) {
+      if (!modal) return;
+
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+
+      const anyOpenModal = document.querySelector('.modal-overlay.active');
+      if (!anyOpenModal) {
+        document.body.classList.remove('modal-open');
+      }
+
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+      }
+    }
+
+    modalTriggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        openModal(trigger.getAttribute('data-modal-target'));
+      });
+    });
+
+    closeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        closeModal(button.closest('.modal-overlay'));
+      });
+    });
+
+    modals.forEach(modal => {
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+          closeModal(modal);
+        }
+      });
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        const activeModal = document.querySelector('.modal-overlay.active');
+        if (activeModal) {
+          closeModal(activeModal);
+        }
+      }
+    });
   </script>
 </body>
 </html>
-
