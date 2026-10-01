@@ -3,186 +3,275 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VibraVolt – Built By Budge</title>
-
+  <title>VibraVolt – Vibration Energy Harvesting | Built By Budge</title>
+  <link rel="icon" type="image/png" href="images/builtbybudge-logo-mark.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="css/styles.css" />
-  <meta name="description" content="VibraVolt – Triboelectric nanogenerator concept that harvests wasted vibration to improve energy efficiency, recognised by the United Nations." />
+  <meta name="description" content="VibraVolt: a vibration energy-harvesting concept placed third at UNITE 2030's Camp 2030 in 2023. The physics, published research and measurements needed to evaluate it." />
 
-  <!-- Page-specific styling -->
   <style>
-    .vibravolt-hero-layout {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 32px;
-      align-items: center;
+    .vv-page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 64px 24px 32px;
     }
-
-    .vibravolt-hero-card {
-      max-width: 260px;
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.9);
+    .vv-page a {
+      color: inherit;
+      text-underline-offset: 4px;
+      text-decoration-color: #777;
     }
-
-    .vibravolt-hero-card img {
-      display: block;
-      width: 100%;
-      height: auto;
+    .vv-page a:hover { text-decoration-color: currentColor; }
+    .vv-page a:focus-visible, .vv-home:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 5px;
+      border-radius: 2px;
     }
-
-    .vibravolt-hero-caption {
-      padding: 10px 14px 12px;
-      font-size: 11px;
-      color: var(--text-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
+    .vv-home { display: flex; align-items: center; gap: 14px; color: inherit; text-decoration: none; }
+    .vv-hero { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 64px; align-items: center; }
+    .vv-hero h1 { font-size: clamp(42px, 7vw, 72px); line-height: 1.05; letter-spacing: -0.045em; margin: 12px 0 20px; }
+    .vv-deck { font-size: clamp(21px, 3vw, 28px); line-height: 1.35; max-width: 600px; margin: 0 0 18px; }
+    .vv-copy { font-size: 16px; line-height: 1.75; color: #b8b8b8; max-width: 720px; }
+    .vv-copy p { margin: 0 0 18px; }
+    .vv-copy strong { color: var(--text-main); font-weight: 500; }
+    .vv-recognition { border-left: 2px solid #929292; padding-left: 16px; margin-top: 28px; font-size: 14px; line-height: 1.7; color: #c7c7c7; }
+    .vv-recognition strong { display: block; color: var(--text-main); font-size: 16px; }
+    .vv-art { margin: 0; border: 1px solid var(--card-border); border-radius: var(--radius-xl); overflow: hidden; background: var(--card-bg); }
+    .vv-art img { display: block; width: 100%; height: auto; }
+    .vv-art figcaption { padding: 12px 16px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-soft); }
+    .vv-section { padding: 46px 0; border-top: 1px solid rgba(255,255,255,0.1); scroll-margin-top: 100px; }
+    .vv-section:first-of-type { margin-top: 52px; }
+    .vv-section h2 { font-size: clamp(23px, 3vw, 30px); line-height: 1.25; letter-spacing: -0.025em; margin: 0 0 20px; }
+    .vv-section h3 { font-size: 18px; line-height: 1.4; margin: 0 0 10px; }
+    .vv-label { color: var(--text-soft); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 14px; }
+    .vv-cite { display: inline-block; font-size: 12px; vertical-align: super; line-height: 1; text-decoration: none; padding: 0 3px; }
+    .vv-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; padding: 0; margin: 28px 0 0; list-style: none; }
+    .vv-step-number { display: block; font-size: 12px; color: var(--text-soft); margin-bottom: 14px; font-variant-numeric: tabular-nums; }
+    .vv-steps p, .vv-study p { font-size: 14px; line-height: 1.75; color: #b8b8b8; margin: 0; }
+    .vv-studies { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .vv-study { padding: 24px; border: 1px solid var(--card-border); border-radius: var(--radius-lg); background: var(--card-bg); }
+    .vv-study .vv-label { font-size: 11px; margin-bottom: 14px; color: var(--text-soft); }
+    .vv-note { color: var(--text-soft); font-size: 13px; line-height: 1.7; max-width: 760px; margin: 20px 0 0; }
+    .vv-calculation { border-left: 2px solid #929292; padding: 4px 0 4px 22px; margin: 26px 0; }
+    .vv-calculation .vv-equation { color: var(--text-main); font-size: clamp(20px, 3vw, 26px); line-height: 1.5; margin: 8px 0; font-variant-numeric: tabular-nums; }
+    .vv-calculation p { margin: 0; font-size: 14px; line-height: 1.7; color: #b8b8b8; max-width: 690px; }
+    .vv-tests { margin: 24px 0; }
+    .vv-tests > div { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 28px; padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .vv-tests dt { font-size: 15px; font-weight: 500; }
+    .vv-tests dd { margin: 0; font-size: 14px; line-height: 1.75; color: #b8b8b8; max-width: 690px; }
+    .vv-references { padding-left: 22px; margin: 0; }
+    .vv-references li { padding-left: 8px; margin-bottom: 20px; font-size: 14px; line-height: 1.65; color: #b8b8b8; scroll-margin-top: 110px; overflow-wrap: anywhere; }
+    .vv-references a { color: var(--text-main); }
+    .vv-references span { display: block; margin-top: 3px; font-size: 12px; color: var(--text-soft); }
+    .vv-references li:target { outline: 1px solid #777; outline-offset: 7px; border-radius: 2px; }
+    .vv-back { display: inline-block; margin-top: 12px; font-size: 14px; }
+    @media (max-width: 800px) {
+      .vv-hero { grid-template-columns: minmax(0, 1fr) 220px; gap: 30px; }
+      .vv-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
     }
-
-    .vibravolt-list {
-      margin-top: 10px;
-      padding-left: 18px;
-      font-size: 14px;
-      color: var(--text-soft);
+    @media (max-width: 600px) {
+      .vv-page { padding: 40px 20px 24px; }
+      .vv-hero { grid-template-columns: 1fr; gap: 28px; }
+      .vv-art { max-width: 240px; }
+      .vv-section { padding: 34px 0; }
+      .vv-section:first-of-type { margin-top: 36px; }
+      .vv-studies { grid-template-columns: 1fr; }
+      .vv-tests > div { grid-template-columns: 1fr; gap: 7px; }
     }
-
-    .vibravolt-list li + li {
-      margin-top: 4px;
-    }
-
-    @media (max-width: 640px) {
-      .vibravolt-hero-layout {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .vibravolt-hero-card {
-        max-width: 220px;
-      }
+    @media (max-width: 360px) {
+      .vv-steps { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
   <div class="bg-gradient"></div>
-
   <header class="site-header">
     <div class="brand">
-      <a href="index.html" style="display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;">
-        <img
-          src="images/builtbybudge-logo-mark.png"
-          alt="Built By Budge logo"
-          class="brand-logo-img"
-        />
-        <div class="brand-text">
-          <span class="brand-title">Built By Budge</span>
-        </div>
+      <a href="index.html" class="vv-home">
+        <img src="images/builtbybudge-logo-mark.png" alt="Built By Budge logo" class="brand-logo-img" />
+        <span class="brand-title">Built By Budge</span>
       </a>
     </div>
-
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Main navigation">
       <a href="index.html#projects">Projects</a>
       <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="vibravolt-hero-layout">
-        <div class="hero-content">
-          <p class="hero-kicker">Energy</p>
-          <h1>VibraVolt</h1>
-          <p class="hero-subtitle">
-            A triboelectric nanogenerator concept that turns wasted vibration into usable micro-energy.
-          </p>
-          <p class="project-line" style="margin-top:10px;">
-            Designed to sit inside everyday appliances, heavy machinery and vehicles, VibraVolt aims to
-            make the world’s hardware more energy-efficient instead of letting vibration disappear as
-            noise and heat.
-          </p>
+  <main class="vv-page">
+    <div class="vv-hero">
+      <div>
+        <p class="hero-kicker">Energy · Concept</p>
+        <h1>VibraVolt</h1>
+        <p class="vv-deck">Harvesting machine vibration to power small electronics.</p>
+        <div class="vv-copy">
+          <p>A concept for converting vibration from appliances and machinery into electrical power using a triboelectric nanogenerator. The engineering challenge is getting enough usable energy to a real load, consistently.</p>
         </div>
+        <p class="vv-recognition">
+          <strong>Third place at Camp 2030</strong>
+          UNITE 2030 · New York · 2023
+          <a class="vv-cite" href="#ref-1" aria-label="Reference 1: Camp 2030 award coverage">[1]</a>
+        </p>
+      </div>
+      <figure class="vv-art">
+        <img src="images/VibraVolt.png" alt="VibraVolt concept illustration" />
+        <figcaption>Concept illustration</figcaption>
+      </figure>
+    </div>
 
-        <!-- Hero image -->
-        <aside class="vibravolt-hero-card">
-          <img src="images/VibraVolt.png" alt="VibraVolt concept illustration" />
-          <div class="vibravolt-hero-caption">
-            VIBRAVOLT · CONCEPT VISUAL
-          </div>
-        </aside>
+    <section class="vv-section" aria-labelledby="origin-heading">
+      <p class="vv-label">The project</p>
+      <h2 id="origin-heading">Where it started</h2>
+      <div class="vv-copy">
+        <p>I developed VibraVolt with Emily Roberts and Zainab Alyosha at UNITE 2030’s Camp 2030 in September 2023. Our proposal addressed SDG 7: Affordable and Clean Energy. It placed third overall in the event’s pitch competition.
+          <a class="vv-cite" href="#ref-1" aria-label="Reference 1: Camp 2030 award coverage">[1]</a>
+        </p>
+        <p>The starting point was vibration in appliances: could some of that mechanical energy be recovered as electricity? A practical first use to investigate is a sensor mounted on a vibrating machine, storing energy between readings. The potential benefit is less wiring or fewer battery replacements where maintenance is difficult.</p>
       </div>
     </section>
 
-    <!-- OVERVIEW -->
-    <section class="section">
-      <article class="project-card">
-        <div class="project-pill">Energy</div>
-        <h3>Overview</h3>
-        <p class="project-line">
-          Most machines produce “waste” in the form of vibration. VibraVolt captures that motion
-          using triboelectric layers, converts it into electrical charge, and feeds it back into the
-          system to improve efficiency instead of wasting it.
+    <section class="vv-section" aria-labelledby="physics-heading">
+      <p class="vv-label">The physics</p>
+      <h2 id="physics-heading">From movement to electrical power</h2>
+      <div class="vv-copy">
+        <p>A triboelectric nanogenerator, or TENG, combines <strong>contact electrification</strong> with <strong>electrostatic induction</strong>. One possible arrangement is a pair of layers that repeatedly touch and separate as the housing vibrates.
+          <a class="vv-cite" href="#ref-2" aria-label="Reference 2: Flexible triboelectric generator">[2]</a>
         </p>
-
-        <ul class="vibravolt-list">
-          <li>Targets SDG 7 by improving energy efficiency through vibration harvesting.</li>
-          <li>Concept recognised with a United Nations sustainability award.</li>
-          <li>Potential to be embedded in appliances, industrial machinery and transport fleets.</li>
-          <li>Even small efficiency gains at scale lead to massive energy and emissions savings.</li>
-        </ul>
-      </article>
+      </div>
+      <ol class="vv-steps" aria-label="Conceptual energy conversion path">
+        <li>
+          <span class="vv-step-number" aria-hidden="true">01</span>
+          <h3>Contact</h3>
+          <p>Two dissimilar surfaces touch and acquire opposite surface charges. Sliding friction is not required in a contact–separation design.
+            <a class="vv-cite" href="#ref-5" aria-label="Reference 5: TENG working modes and performance standards">[5]</a>
+          </p>
+        </li>
+        <li>
+          <span class="vv-step-number" aria-hidden="true">02</span>
+          <h3>Separation</h3>
+          <p>Movement changes the electric potential between the electrodes, driving current through an external circuit. The return motion reverses the current.</p>
+        </li>
+        <li>
+          <span class="vv-step-number" aria-hidden="true">03</span>
+          <h3>Power management</h3>
+          <p>A rectifier produces one-way current. Further circuitry transfers energy into storage and regulates the supply for the electronics.
+            <a class="vv-cite" href="#ref-3" aria-label="Reference 3: TENG power management research">[3]</a>
+          </p>
+        </li>
+        <li>
+          <span class="vv-step-number" aria-hidden="true">04</span>
+          <h3>A useful load</h3>
+          <p>Stored energy runs a sensor or radio transmission. The energy collected between events must cover the event itself, standby consumption and circuit losses.</p>
+        </li>
+      </ol>
     </section>
 
-    <!-- HOW IT WORKS -->
-    <section class="section">
-      <article class="project-card">
-        <div class="project-pill">Engineering</div>
-        <h3>How It Works</h3>
-
-        <p class="project-line">
-          VibraVolt uses the <strong>triboelectric effect</strong> — the same principle behind static electricity —
-          to convert motion into charge. Every vibration becomes a tiny source of power.
-        </p>
-
-        <ul class="vibravolt-list">
-          <li><strong>1. Vibration enters the system</strong><br>
-              When a machine or appliance vibrates, that motion is normally wasted as noise or heat.</li>
-
-          <li><strong>2. Triboelectric layers slide or tap</strong><br>
-              Two materials with different electron affinities rub against each other.</li>
-
-          <li><strong>3. Charge is produced</strong><br>
-              Electrons transfer between layers, generating a small voltage.</li>
-
-          <li><strong>4. Energy is captured</strong><br>
-              A rectifier and capacitor store or smooth this energy.</li>
-
-          <li><strong>5. System efficiency improves</strong><br>
-              The captured micro-energy can power small electronics or offset total machine consumption.</li>
-        </ul>
-
-        <p class="project-line" style="margin-top:12px;">
-          It’s not about replacing batteries — it’s about capturing wasted motion across millions of devices.
-          At scale, even a small improvement creates significant global energy savings.
-        </p>
-      </article>
+    <section class="vv-section" aria-labelledby="research-heading">
+      <p class="vv-label">Published evidence</p>
+      <h2 id="research-heading">What other researchers have demonstrated</h2>
+      <div class="vv-studies">
+        <article class="vv-study">
+          <p class="vv-label">Fan, Tian &amp; Wang · 2012</p>
+          <h3>A working triboelectric generator</h3>
+          <p>The original flexible-generator study demonstrated electrical output from mechanically deformed polymer layers and electrodes. It established a physical route from movement to electrical energy.
+            <a class="vv-cite" href="#ref-2" aria-label="Reference 2: Flexible triboelectric generator">[2]</a>
+          </p>
+        </article>
+        <article class="vv-study">
+          <p class="vv-label">Kim et al. · 2024</p>
+          <h3>A wireless reading every 30 minutes</h3>
+          <p>A vibration harvester with three mechanical degrees of freedom powered a temperature/humidity sensor and transmitted data every 30 minutes under the study’s experimental conditions. Its output increased around its resonant frequencies.
+            <a class="vv-cite" href="#ref-4" aria-label="Reference 4: Vibration-powered wireless sensor research">[4]</a>
+          </p>
+        </article>
+      </div>
+      <p class="vv-note">These are results from published research devices. They establish the basis for the concept; they are not measurements of VibraVolt.</p>
     </section>
 
-    <!-- GLOBAL BOTTOM LINK (matches NOVA & IngreedyIt) -->
-    <section class="section">
-      <a href="index.html#projects" class="project-link">← Back to projects</a>
+    <section class="vv-section" aria-labelledby="power-heading">
+      <p class="vv-label">The energy budget</p>
+      <h2 id="power-heading">Measure energy delivered, not just voltage</h2>
+      <div class="vv-copy">
+        <p>A voltage spike does not tell you how long a sensor can run. The useful measurements are average power into a specified load and energy accumulated in storage over a stated period. TENG performance depends on the materials, geometry, motion and electrical load.
+          <a class="vv-cite" href="#ref-5" aria-label="Reference 5: TENG performance measurement standards">[5]</a>
+        </p>
+        <p>Power management matters. A TENG’s pulsed output cannot be treated as a steady battery supply; rectification, energy transfer and storage all affect what reaches the electronics.
+          <a class="vv-cite" href="#ref-3" aria-label="Reference 3: TENG power management research">[3]</a>
+        </p>
+      </div>
+      <aside class="vv-calculation" aria-label="Illustrative sensor energy budget">
+        <p>For example, assume one measurement and transmission uses 1 millijoule, once per minute:</p>
+        <p class="vv-equation">1 mJ ÷ 60 s ≈ 16.7 µW</p>
+        <p>That is the average power for those events alone. Standby consumption and losses raise the required harvest rate. These are illustrative assumptions, not measured output or a performance target for VibraVolt.</p>
+      </aside>
     </section>
 
+    <section class="vv-section" aria-labelledby="testing-heading">
+      <p class="vv-label">Engineering next steps</p>
+      <h2 id="testing-heading">What a prototype needs to prove</h2>
+      <div class="vv-copy">
+        <p>The next step is a measured energy budget on a specific machine. A credible test would report:</p>
+      </div>
+      <dl class="vv-tests">
+        <div>
+          <dt>Available motion</dt>
+          <dd>Vibration frequency, acceleration and displacement at the mounting point, across normal operating conditions.</dd>
+        </div>
+        <div>
+          <dt>Usable output</dt>
+          <dd>Average DC power after conditioning, energy stored, startup time and the actual sensor duty cycle. Include the circuit’s own consumption and storage leakage.</dd>
+        </div>
+        <div>
+          <dt>Effect on the machine</dt>
+          <dd>Power drawn with and without the harvester at the same speed and load. Extracting mechanical energy adds a load; a reduction in machine electricity use must be measured separately.</dd>
+        </div>
+        <div>
+          <dt>Service life</dt>
+          <dd>Output after repeated contact cycles, material wear, humidity and temperature changes. Report the test duration and conditions alongside the result.</dd>
+        </div>
+        <div>
+          <dt>Practical value</dt>
+          <dd>Installed cost and maintenance compared with a battery, wiring, or a piezoelectric or electromagnetic harvester suited to the same vibration source.</dd>
+        </div>
+      </dl>
+      <div class="vv-copy">
+        <p>Success would mean a useful electronic task runs reliably from the measured vibration source, with a clear advantage over the alternatives. Claims about machine efficiency or emissions savings would need additional system-level evidence.</p>
+      </div>
+    </section>
+
+    <section class="vv-section" id="references" aria-labelledby="references-heading">
+      <p class="vv-label">Sources</p>
+      <h2 id="references-heading">References &amp; further reading</h2>
+      <ol class="vv-references">
+        <li id="ref-1">
+          Jake Smiths (2023). <a href="https://nytech.media/innovative-solutions-to-sustainable-development-goals-celebrated-at-camp-2030/">Innovative Solutions to Sustainable Development Goals Celebrated at Camp 2030.</a>
+          <span>New York Tech Media, 25 September 2023. Reports the placement and team members.</span>
+        </li>
+        <li id="ref-2">
+          Fan, F.-R., Tian, Z.-Q. &amp; Wang, Z. L. (2012). <a href="https://doi.org/10.1016/j.nanoen.2012.01.004">Flexible triboelectric generator.</a>
+          <span>Nano Energy 1(2), 328–334. Original generator demonstration.</span>
+        </li>
+        <li id="ref-3">
+          Niu, S. et al. (2015). <a href="https://doi.org/10.1038/ncomms9975">A universal self-charging system driven by random biomechanical energy for sustainable operation of mobile electronics.</a>
+          <span>Nature Communications 6, 8975. Power management, storage and electronic loads.</span>
+        </li>
+        <li id="ref-4">
+          Kim, J. et al. (2024). <a href="https://doi.org/10.1002/admt.202301427">Triboelectric Nanogenerators for Battery-Free Wireless Sensor System Using Multi-Degree of Freedom Vibration.</a>
+          <span>Advanced Materials Technologies 9, 2301427. Vibration-powered wireless sensing.</span>
+        </li>
+        <li id="ref-5">
+          Zi, Y. et al. (2015). <a href="https://doi.org/10.1038/ncomms9376">Standards and figure-of-merits for quantifying the performance of triboelectric nanogenerators.</a>
+          <span>Nature Communications 6, 8376. Energy output and performance comparison.</span>
+        </li>
+      </ol>
+      <a href="index.html#projects" class="vv-back">← Back to projects</a>
+    </section>
   </main>
 
   <footer class="site-footer">
     <p>© <span id="year"></span> Built By Budge</p>
   </footer>
-
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
